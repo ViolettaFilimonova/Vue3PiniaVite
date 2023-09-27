@@ -14,10 +14,7 @@ export const useEmployeesStore = defineStore('employees', {
       this.selectedEmployee = { ...employee };
     },
     updateEmployee(updatedEmployee) {
-      const index = this.employees.findIndex((employee) => employee.id === updatedEmployee.id);
-      if (index !== -1) {
-        this.employees[index] = { ...updatedEmployee };
-      }
+      this.employees.map((employee) => employee.id === updatedEmployee.id ? employee.name = updatedEmployee.name : employee.name);
     },
   },
 });
