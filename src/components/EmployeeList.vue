@@ -1,12 +1,13 @@
 
-<script setup>
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 import { useEmployeesStore } from '../store/index'; 
-
+interface EmployeeValue {
+  id: number , name: string, age: number 
+}
 
     const employeesStore = useEmployeesStore()
 
-    const selectEmployee = (employee) => {
+    const selectEmployee = (employee: EmployeeValue) => {
       employeesStore.setSelectedEmployee(employee);
     };
 
@@ -16,7 +17,7 @@ import { useEmployeesStore } from '../store/index';
 </script>
 
 <template>
- <p>{{ employeesStore.employee }}</p> 
+
     <h2>Список сотрудников</h2>
     <ul>
       <li v-for="employee in employeesStore.employees" :key="employee.id" @click="selectEmployee(employee)">

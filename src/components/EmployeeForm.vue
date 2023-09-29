@@ -1,10 +1,11 @@
-<script setup>
-import { defineComponent, ref } from 'vue';
+<script setup lang="ts">
 import { useEmployeesStore } from '../store/index';
-
+interface EmployeeValue {
+  id: number , name: string, age: number 
+}
 
     const store = useEmployeesStore();  
-    const updateEmployee = (val) => {
+    const updateEmployee = (val: EmployeeValue) => {
       store.updateEmployee(val);
     };
 

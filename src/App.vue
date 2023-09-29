@@ -1,5 +1,5 @@
-<script setup >
-import EmployeeView from './components/EmployeeView.vue'
+<script setup lang="ts">
+import * as EmployeeView from './components/EmployeeView.vue'
 </script>
 
 <template>
